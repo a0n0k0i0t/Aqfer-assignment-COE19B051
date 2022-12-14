@@ -156,5 +156,5 @@ else:
     "timestamp blocked"
   ```
 ### Time and Space Complexity
-Time complexity: $O$(1) per timestamp
+Time complexity: $O$(1) per timestamp   
 Space complexity: $O$(R)
