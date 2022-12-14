@@ -2,9 +2,15 @@
 ## Ratelimiter program C++ implementation
 ### Problem Statement
 Create a rate limiter program using a sliding window which allows/blocks request based on timestamps. Program will receive sequence of timestamps via arguments. For each timestamp it has to output allowed/blocked based on the sliding window.
-Sliding window to have 2 configurations,
-R: maximum number of requests allowed in sliding window
-S: sliding window time period in seconds
+Sliding window to have 2 configurations,   
+R: maximum number of requests allowed in sliding window   
+S: sliding window time period in seconds   
+   
+Program arguments   
+Rate Limiter program to accept 3 or more arugments   
+0th argument is for specifying R   
+1st argument is for specifying S   
+2nd argument onwards for specifying sequence of timestamps in ascending   
 ### To build & run:   
 ```
 g++ ratelimiter.cpp -o ratelimiter
@@ -12,8 +18,8 @@ g++ ratelimiter.cpp -o ratelimiter
 ```
 
 ### Runtime environment
-g++ (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
-cpp (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
+`g++ (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0`
+`cpp (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0`
 
 ### Sample input and output
 
@@ -135,7 +141,7 @@ With unix timestamp
 ```
 ### Logic
 
-Maintain a queue to store currently allowed timestamps max upto R.
+Maintain a queue to store currently allowed timestamps max upto R.   
 At each timestamp
 ```
 if queue_size<R: //less than R allowed timestamp
