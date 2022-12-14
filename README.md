@@ -18,7 +18,7 @@ g++ ratelimiter.cpp -o ratelimiter
 ```
 
 ### Runtime environment
-`g++ (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0`
+`g++ (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0`   
 `cpp (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0`
 
 ### Sample input and output
@@ -144,14 +144,17 @@ With unix timestamp
 Maintain a queue to store currently allowed timestamps max upto R.   
 At each timestamp
 ```
-if queue_size<R: //less than R allowed timestamp
+if queue_size<R: //if currently less than R timestamp allowed in window
   "timestamp allowed"
   queue.push(cur_timestamp)
 else:
-  cur_timestamp-s >queue_front: // if curr_timestamp is outside window
+  cur_timestamp-s >queue_front: // if cur_timestamp is outside window
     "tiemstamp allowed"
     queue.pop()
     queue.push(cur_timestamp)
   else:
     "timestamp blocked"
   ```
+### Time and Space Complexity
+Time complexity: $O$(1) per timestamp
+Space complexity: $O$(R)
